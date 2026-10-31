@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "uni-profiles",
+  "compatibility_date": "2026-10-01",
+  // Static site: no Worker script, Cloudflare serves everything in ./public.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
