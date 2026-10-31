@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Uni Profiles</title>
+<meta name="description" content="Uni Profiles Pvt. Ltd., Rajgangpur, Odisha. Heavy steel fabrication for boilers, refineries, steel plants and railway bridges.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: Apple product-page grammar. Alternating black stages and light-grey galleries, centred oversized headlines, bento tiles, horizontal carousel, tech-specs list. One deliberate look in every theme. */
+:root{
+  --black:#000; --night:#111113; --tile-dark:#1c1c1e; --white:#fff; --grey:#f5f5f7;
+  --ink:#1d1d1f; --sub:#6e6e73; --sub-dark:#a1a1a6; --hair:#d2d2d7; --hair-dark:#38383c;
+  --link:#0066cc; --link-dark:#2997ff; --btn:#0071e3; --brand:#f5b10c;
+  --sf:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:56px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--white);color:var(--ink);font:400 17px/1.47 var(--sf);letter-spacing:-.022em;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:rgba(22,22,23,.92)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--link-dark);outline-offset:3px;border-radius:6px}
+img{display:block;max-width:100%}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;text-wrap:balance}
+.wrap{max-width:1040px;margin-inline:auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+.wide{max-width:1260px}
+.center{text-align:center}
+.eyebrow{font-size:21px;font-weight:600;letter-spacing:.004em;margin-bottom:8px}
+.headline{font-size:clamp(40px,7vw,80px);line-height:1.05}
+.h2{font-size:clamp(34px,5.4vw,56px);line-height:1.07}
+.h3{font-size:clamp(24px,3vw,32px);line-height:1.12}
+.lead{font-size:clamp(19px,2.2vw,24px);line-height:1.38;letter-spacing:-.01em;font-weight:400}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;margin-top:22px;font-size:19px}
+.chev{color:var(--link)}
+.chev::after{content:" ›";font-size:1.1em}
+.chev:hover{text-decoration:underline}
+.on-dark .chev{color:var(--link-dark)}
+.pill{display:inline-block;background:var(--btn);color:#fff;font-size:17px;font-weight:400;padding:11px 22px;border-radius:980px;border:0;cursor:pointer;letter-spacing:-.01em}
+.pill:hover{background:#0077ed}
+.pill.sm{font-size:12px;padding:5px 12px}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(22,22,23,.82);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);color:#f5f5f7}
+.nav .wrap{display:flex;align-items:center;height:52px;gap:24px}
+.nav .logo{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:600;letter-spacing:-.01em;flex:none}
+.nav .logo img{width:24px;height:24px;border-radius:5px;background:#fff;padding:1px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0 0 0 auto;padding:0;font-size:12px}
+.nav ul a{opacity:.8}
+.nav ul a:hover{opacity:1}
+@media (max-width:820px){.nav ul{display:none} .nav .pill{margin-left:auto}}
+
+/* sections */
+.stage{padding-block:clamp(64px,10vw,120px)}
+.dark{background:var(--black);color:#f5f5f7}
+.night{background:var(--night);color:#f5f5f7}
+.grey{background:var(--grey)}
+.dark .sub,.night .sub{color:var(--sub-dark)}
+.sub{color:var(--sub)}
+
+/* hero */
+.hero{background:var(--black);color:#f5f5f7;padding-block:72px 0;overflow:hidden}
+.hero .headline{font-size:clamp(56px,11vw,128px);line-height:1;letter-spacing:-.04em;background:linear-gradient(180deg,#fff 35%,#8e8e93 115%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+.hero .lead{max-width:640px;margin:22px auto 0;color:var(--sub-dark)}
+.hero-media{margin:56px auto 0;position:relative}
+.hero-media img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:28px 28px 0 0}
+.hero-media::after{content:"";position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(transparent,var(--black))}
+
+/* numbers */
+.figures{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px 24px;margin-top:64px}
+.figures div{text-align:center;min-width:0}
+.figures .big{display:block;font-size:clamp(40px,6vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.figures .big small{font-size:.42em;letter-spacing:-.01em;margin-left:4px;font-weight:600}
+.figures p{font-size:14px;color:var(--sub);margin-top:10px;line-height:1.35}
+@media (max-width:760px){.figures{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;margin-top:56px}
+.tile{background:var(--white);border-radius:28px;overflow:hidden;display:flex;flex-direction:column;min-width:0;grid-column:span 2}
+.tile.l{grid-column:span 4}
+.tile.h{grid-column:span 3}
+.tile .tx{padding:32px 32px 0}
+.tile .kicker{font-size:14px;font-weight:600;color:var(--sub);margin-bottom:6px}
+.tile h3{font-size:clamp(24px,2.6vw,30px);line-height:1.12}
+.tile p{color:var(--sub);margin-top:10px;font-size:17px}
+.tile .media{margin-top:auto;padding-top:28px}
+.tile .media img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.tile.l .media img{aspect-ratio:16/8}
+.tile.dark{background:var(--tile-dark);color:#f5f5f7}
+.tile.dark p,.tile.dark .kicker{color:var(--sub-dark)}
+@media (max-width:900px){.tile,.tile.l,.tile.h{grid-column:span 3}}
+@media (max-width:620px){.bento{grid-template-columns:1fr}.tile,.tile.l,.tile.h{grid-column:auto}}
+
+/* carousel */
+.seg{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:2px;background:#e8e8ed;border-radius:22px;padding:3px;margin-top:32px}
+.seg button{font:500 14px/1 var(--sf);letter-spacing:-.01em;border:0;background:transparent;color:var(--ink);padding:9px 16px;border-radius:980px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--white);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.rail{--edge:max(22px,calc((100% - 1040px)/2 + 22px));display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:40px var(--edge) 24px;scroll-padding-inline:var(--edge);scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 clamp(260px,30vw,372px);scroll-snap-align:start;background:var(--white);border-radius:24px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.card:hover{transform:scale(1.015);box-shadow:0 8px 30px rgba(0,0,0,.12)}
+.card img{width:100%;aspect-ratio:1/0.85;object-fit:cover}
+.card .c{padding:20px 24px 26px}
+.card .who{font-size:12px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.02em}
+.card h3{font-size:21px;line-height:1.2;margin-top:6px;letter-spacing:-.02em}
+.rail-ctl{display:flex;justify-content:flex-end;gap:14px}
+.rail-ctl button{width:36px;height:36px;border-radius:50%;border:0;background:#e8e8ed;color:var(--ink);font-size:22px;line-height:1;cursor:pointer;display:grid;place-items:center}
+.rail-ctl button:hover{background:#dcdce1}
+.rail-ctl button:disabled{opacity:.4;cursor:default}
+
+/* facility */
+.plan{margin-top:64px;overflow-x:auto}
+.plan svg{min-width:680px;width:100%;height:auto;display:block}
+.plan text{font-family:var(--sf);font-size:13px;fill:#a1a1a6}
+.plan .bay{font-size:30px;font-weight:600;fill:#f5f5f7;letter-spacing:-.03em}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:64px}
+.duo figure{margin:0;border-radius:24px;overflow:hidden;background:var(--tile-dark);text-align:left}
+.duo img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.duo figcaption{padding:16px 22px 20px;font-size:14px;color:var(--sub-dark)}
+@media (max-width:700px){.duo{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 20px;margin-top:40px;text-align:left}
+.steps div{border-top:1px solid var(--hair-dark);padding-top:18px;min-width:0}
+.steps b{display:block;font-size:12px;color:var(--brand);font-weight:600;letter-spacing:.02em}
+.steps h3{font-size:21px;margin:8px 0 6px}
+.steps p{font-size:14px;color:var(--sub-dark);line-height:1.4}
+@media (max-width:900px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* tech specs */
+.specs-group{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px;padding-block:36px;border-top:1px solid var(--hair)}
+.specs-group h3{font-size:28px;letter-spacing:-.02em}
+.specs-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 32px}
+.spec{min-width:0}
+.spec b{display:block;font-size:24px;font-weight:600;letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1.15}
+.spec span{display:block;font-size:14px;color:var(--sub);margin-top:4px;line-height:1.35}
+@media (max-width:760px){.specs-group{grid-template-columns:1fr}}
+@media (max-width:440px){.specs-list{grid-template-columns:1fr}}
+
+/* quality */
+.checks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px;text-align:left}
+.checks .tile{grid-column:auto;padding:32px}
+.checks ul{list-style:none;padding:0;margin:18px 0 0}
+.checks li{padding:9px 0;border-top:1px solid var(--hair-dark);font-size:15px;color:#e8e8ed;display:flex;gap:10px}
+.checks li::before{content:"✓";color:var(--brand);font-weight:600}
+.agents{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.agents span{font-size:13px;padding:7px 12px;border-radius:980px;background:#2c2c2e;color:#e8e8ed}
+@media (max-width:860px){.checks{grid-template-columns:1fr}}
+
+/* approvals */
+.certs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px}
+.cert{background:var(--white);border-radius:24px;padding:30px 30px 28px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cert .by{font-size:12px;font-weight:600;color:var(--sub);text-transform:uppercase;letter-spacing:.03em}
+.cert h3{font-size:28px;letter-spacing:-.03em}
+.cert p{font-size:15px;line-height:1.45}
+.cert .ref{margin-top:auto;padding-top:14px;border-top:1px solid var(--hair);font-size:13px;color:var(--sub);font-variant-numeric:tabular-nums;word-break:break-word}
+.cert.full{grid-column:1/-1}
+.cert.feature{grid-column:span 2;background:var(--black);color:#f5f5f7}
+.cert.feature .by,.cert.feature .ref{color:var(--sub-dark)}
+.cert.feature .ref{border-color:var(--hair-dark)}
+.cert.feature h3{font-size:clamp(40px,5vw,64px)}
+.cert.feature p{color:#e8e8ed;font-size:19px;max-width:520px}
+@media (max-width:900px){.certs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.certs{grid-template-columns:1fr}.cert.feature{grid-column:auto}}
+
+/* clients */
+.names{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 40px;margin:48px auto 0;max-width:900px}
+.names span{font-size:clamp(19px,2.2vw,24px);font-weight:600;color:#86868b;letter-spacing:-.02em}
+.quote{max-width:820px;margin:96px auto 0}
+.quote blockquote{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.15;font-weight:600;letter-spacing:-.03em}
+.quote figcaption{color:var(--sub);margin-top:20px;font-size:17px}
+.quotes-sm{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;max-width:860px;margin:48px auto 0;text-align:left}
+.quotes-sm div{background:var(--grey);border-radius:24px;padding:28px}
+.quotes-sm p{font-size:19px;font-weight:600;letter-spacing:-.02em;line-height:1.3}
+.quotes-sm span{display:block;font-size:14px;color:var(--sub);margin-top:12px}
+@media (max-width:640px){.quotes-sm{grid-template-columns:1fr}}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:56px;text-align:left}
+.contact-grid>div{background:var(--tile-dark);border-radius:24px;padding:28px;min-width:0}
+.contact-grid .by{font-size:12px;font-weight:600;color:var(--sub-dark);text-transform:uppercase;letter-spacing:.03em;margin-bottom:12px}
+.contact-grid address{font-style:normal;font-size:17px;line-height:1.5}
+.cl{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--hair-dark);font-size:16px;flex-wrap:wrap}
+.cl span{user-select:all;word-break:break-all;font-variant-numeric:tabular-nums}
+.copy{font:500 12px/1 var(--sf);border:0;background:#2c2c2e;color:var(--link-dark);padding:7px 12px;border-radius:980px;cursor:pointer;flex:none}
+.copy:hover{background:#3a3a3c}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+
+footer{background:var(--grey);color:var(--sub);font-size:12px;line-height:1.5}
+footer .wrap{padding-block:22px 34px}
+footer .cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;padding-bottom:20px;border-bottom:1px solid var(--hair)}
+footer h4{margin:0 0 8px;font-size:12px;font-weight:600;color:var(--ink)}
+footer ul{list-style:none;margin:0;padding:0}
+footer li{margin-bottom:6px}
+footer a:hover{text-decoration:underline;color:var(--ink)}
+footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding-top:14px}
+@media (max-width:700px){footer .cols{grid-template-columns:1fr 1fr}}
+
+/* motion: everything is visible at rest; browsers that support scroll timelines add a gentle settle */
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .rise{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+    @keyframes rise{from{transform:translateY(28px) scale(.98);opacity:.6}to{transform:none;opacity:1}}
+  }
+}
+</style>
+<link rel="icon" href="img/logo.png">
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="img/logo.png" alt="">Uni Profiles</a>
+    <ul>
+      <li><a href="#build">What we build</a></li>
+      <li><a href="#works">Works</a></li>
+      <li><a href="#facility">Facility</a></li>
+      <li><a href="#specs">Tech specs</a></li>
+      <li><a href="#quality">Quality</a></li>
+      <li><a href="#approvals">Approvals</a></li>
+      <li><a href="#clients">Clients</a></li>
+    </ul>
+    <a class="pill sm" href="#contact">Get a quote</a>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero center on-dark">
+    <div class="wrap">
+      <p class="eyebrow">Uni Profiles</p>
+      <h1 class="headline">Built heavy.</h1>
+      <p class="lead">Steel for boilers, refineries, steel plants and railway bridges. Fabricated in Rajgangpur, Odisha, since 2009.</p>
+      <div class="links"><a class="pill" href="#contact">Send your drawings</a></div>
+      <div class="links" style="margin-top:16px"><a class="chev" href="#works">See the work</a><a class="chev" href="#facility">Tour the facility</a></div>
+    </div>
+    <div class="hero-media wrap">
+      <img src="img/fired-heater-duct.jpg" alt="A large painted steel duct assembly, finished and resting on transport saddles in the Uni Profiles yard">
+    </div>
+  </section>
+
+  <section class="stage center">
+    <div class="wrap">
+      <h2 class="h2">Made for the jobs<br>other shops turn down.</h2>
+      <p class="lead sub" style="max-width:640px;margin:18px auto 0">Big shells, long girders, tall casings. A works sized so the heaviest piece in your order never has to be split to fit.</p>
+      <div class="figures">
+        <div><span class="big">6,000<small>MT</small></span><p>fabricated steel<br>per year</p></div>
+        <div><span class="big">96<small>m</small></span><p>bay length, two bays<br>17 m wide each</p></div>
+        <div><span class="big">20<small>MT</small></span><p>twin EOT cranes running<br>the full length</p></div>
+        <div><span class="big">5<small>acres</small></span><p>of shop, yard and<br>trailer access</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage grey" id="build">
+    <div class="wrap wide">
+      <div class="center">
+        <h2 class="h2">What we build.</h2>
+        <p class="lead sub" style="max-width:640px;margin:14px auto 0">Six product lines. Made to your drawings and your quality plan.</p>
+      </div>
+      <div class="bento">
+        <article class="tile l dark rise">
+          <div class="tx"><p class="kicker">Stacks &amp; chimneys</p><h3>Rolled, banded and shipped in segments ready to erect.</h3><p>Self-supporting steel stacks with flanged joints, platforms and ladders, painted to aviation banding.</p></div>
+          <div class="media"><img src="img/stack-bongaigaon.jpg" alt="Stack shell in red and white bands on a trailer"></div>
+        </article>
+        <article class="tile rise">
+          <div class="tx"><p class="kicker">Boiler &amp; conveyor</p><h3>Buck stays to galleries.</h3><p>Columns, beams, bracings and conveyor structures for boilers and coke-oven batteries.</p></div>
+          <div class="media"><img src="img/buckstay-cob.jpg" alt="Buck stays laid out in the shop"></div>
+        </article>
+        <article class="tile rise">
+          <div class="tx"><p class="kicker">Fired heaters</p><h3>Trial-assembled before they leave.</h3><p>Non-pressure parts: casings, frames and ducting for refinery heaters.</p></div>
+          <div class="media"><img src="img/heater-trial.jpg" alt="Fired heater casing in trial assembly"></div>
+        </article>
+        <article class="tile l rise">
+          <div class="tx"><p class="kicker">Bridge girders</p><h3>RDSO-approved plate and composite girders.</h3><p>For railway and road overbridges. Registered for 3,600 MT a year of girder work.</p></div>
+          <div class="media"><img src="img/rob-assembly.jpg" alt="Road overbridge girder assembly under inspection in the shop"></div>
+        </article>
+        <article class="tile h rise">
+          <div class="tx"><p class="kicker">Chutes, hoppers &amp; ducts</p><h3>Stiffened plate work, square and true.</h3><p>Crusher hoppers, bunkers, flue ducts and gas collecting mains.</p></div>
+          <div class="media"><img src="img/hopper-pyramid.jpg" alt="Pyramid crusher hopper on the shop floor"></div>
+        </article>
+        <article class="tile h dark rise">
+          <div class="tx"><p class="kicker">Non-pressurised tanks</p><h3>From overhead tanks to aerospace bath tanks.</h3><p>Built for L&amp;T, SAIL and Tata Aerospace Systems.</p></div>
+          <div class="media"><img src="img/bath-tank.jpg" alt="Large stiffened rectangular bath tank in a clean hall"></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage grey" id="works" style="padding-top:0">
+    <div class="wrap center">
+      <h2 class="h2">Shipped.</h2>
+      <p class="lead sub" style="max-width:600px;margin:14px auto 0">Jobs through the gate at Rajgangpur, and some of them standing at site.</p>
+      <div class="seg" role="group" aria-label="Filter works">
+        <button type="button" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button type="button" id="f-stack" data-f="stack" aria-pressed="false">Stacks</button>
+        <button type="button" id="f-heater" data-f="heater" aria-pressed="false">Heaters &amp; ducts</button>
+        <button type="button" id="f-boiler" data-f="boiler" aria-pressed="false">Boiler &amp; coke oven</button>
+        <button type="button" id="f-struct" data-f="struct" aria-pressed="false">Structures</button>
+        <button type="button" id="f-tank" data-f="tank" aria-pressed="false">Tanks</button>
+      </div>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Works">
+      <article class="card" data-c="stack"><img src="img/stack-bongaigaon.jpg" alt="Banded stack shell on trailer"><div class="c"><p class="who">IOCL · Bongaigaon</p><h3>Stack shell 3, capped for transport</h3></div></article>
+      <article class="card" data-c="stack"><img src="img/chimney-site.jpg" alt="Steel chimney with spiral stair at site"><div class="c"><p class="who">Site erection</p><h3>Chimney, two segments erected</h3></div></article>
+      <article class="card" data-c="heater"><img src="img/heater-erection.jpg" alt="Fired heater under erection"><div class="c"><p class="who">Fired heater</p><h3>Casing under erection at site</h3></div></article>
+      <article class="card" data-c="boiler"><img src="img/buckstay-bhel.jpg" alt="Painted buck stay"><div class="c"><p class="who">BHEL · Trichy</p><h3>Buck stay</h3></div></article>
+      <article class="card" data-c="stack"><img src="img/crane-lift.jpg" alt="Three cranes loading a stack section"><div class="c"><p class="who">Dispatch</p><h3>Three-crane tandem lift onto trailer</h3></div></article>
+      <article class="card" data-c="tank"><img src="img/bath-tank.jpg" alt="Stiffened bath tank"><div class="c"><p class="who">Tata Aerospace Systems · SECO</p><h3>Bath tank</h3></div></article>
+      <article class="card" data-c="boiler"><img src="img/buckstay-cob.jpg" alt="Buck stays"><div class="c"><p class="who">SAIL RSP · via BEC Bhilai</p><h3>Buck stays, Coke Oven Battery 3</h3></div></article>
+      <article class="card" data-c="stack"><img src="img/chimney-borl.jpg" alt="Refinery chimney after erection"><div class="c"><p class="who">BORL · site photo</p><h3>Chimney after erection</h3></div></article>
+      <article class="card" data-c="heater"><img src="img/heater-trial.jpg" alt="Heater casing trial assembly"><div class="c"><p class="who">Fired heater</p><h3>Trial assembly at the works</h3></div></article>
+      <article class="card" data-c="boiler"><img src="img/gas-main.jpg" alt="Gas collecting main sections"><div class="c"><p class="who">SAIL RSP · via BEC Bhilai</p><h3>Gas collecting main, coke ovens</h3></div></article>
+      <article class="card" data-c="struct"><img src="img/conveyor-gallery.jpg" alt="Conveyor gallery truss"><div class="c"><p class="who">BHEL Industrial Systems Group</p><h3>Conveyor gallery structure</h3></div></article>
+      <article class="card" data-c="stack"><img src="img/stack-shell-1.jpg" alt="Flanged stack shell lifted by crane"><div class="c"><p class="who">IOCL</p><h3>Stack shell 1, flanged end</h3></div></article>
+      <article class="card" data-c="heater"><img src="img/duct-flange.jpg" alt="Flanged duct under inspection"><div class="c"><p class="who">Under inspection</p><h3>Flanged duct with internal bracing</h3></div></article>
+      <article class="card" data-c="tank"><img src="img/overhead-tank.jpg" alt="Overhead tank on trailer"><div class="c"><p class="who">L&amp;T ECC · Kansbahal</p><h3>Overhead tank</h3></div></article>
+      <article class="card" data-c="struct"><img src="img/rob-assembly.jpg" alt="ROB girder control assembly"><div class="c"><p class="who">Rawatsons Engineers · ROB</p><h3>Girder control assembly</h3></div></article>
+      <article class="card" data-c="boiler"><img src="img/drainage-tank.jpg" alt="Drainage tank"><div class="c"><p class="who">SAIL RSP</p><h3>Drainage tank, COB 3</h3></div></article>
+      <article class="card" data-c="stack"><img src="img/stack-iocl.jpg" alt="Stack base and shell segments"><div class="c"><p class="who">IOCL</p><h3>Stack base and shell segments</h3></div></article>
+      <article class="card" data-c="heater"><img src="img/tube-module.jpg" alt="Tube bank in casing"><div class="c"><p class="who">Module</p><h3>Tube bank in fabricated casing</h3></div></article>
+      <article class="card" data-c="struct"><img src="img/crusher-hopper.jpg" alt="Crusher hopper"><div class="c"><p class="who">Material handling</p><h3>Crusher hopper</h3></div></article>
+      <article class="card" data-c="struct"><img src="img/crusher-stand.jpg" alt="Crusher stand"><div class="c"><p class="who">Material handling</p><h3>Crusher stand</h3></div></article>
+      <article class="card" data-c="heater"><img src="img/shell-trailer.jpg" alt="Painted casings on trailer"><div class="c"><p class="who">Dispatch</p><h3>Painted cylindrical casings</h3></div></article>
+      <article class="card" data-c="stack"><img src="img/stack-shell-b.jpg" alt="Stack shell with stiffened flange"><div class="c"><p class="who">Dispatch</p><h3>Stack shell, stiffened base flange</h3></div></article>
+      <article class="card" data-c="struct"><img src="img/beam-yard.jpg" alt="Built-up beams in the bay"><div class="c"><p class="who">H-beam line</p><h3>Built-up sections in the bay</h3></div></article>
+    </div>
+    <div class="wrap rail-ctl">
+      <button type="button" id="prev" aria-label="Previous works">‹</button>
+      <button type="button" id="next" aria-label="Next works">›</button>
+    </div>
+  </section>
+
+  <section class="stage dark center" id="facility">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--brand)">The works</p>
+      <h2 class="headline">Ninety-six metres.<br>Never off the hook.</h2>
+      <p class="lead sub" style="max-width:680px;margin:22px auto 0">Two bays run the full length under 20 MT cranes. A stack shell or a girder travels end to end, from cutting bed to paint booth, without being set down outside.</p>
+      <div class="plan" role="img" aria-label="Shed plan to scale: two adjacent bays, each 17 by 96 metres.">
+        <svg viewBox="0 0 1040 420" xmlns="http://www.w3.org/2000/svg">
+          <rect x="60" y="60" width="960" height="170" rx="6" style="fill:#1c1c1e;stroke:#48484a" stroke-width="1.5"/>
+          <rect x="60" y="238" width="960" height="170" rx="6" style="fill:#1c1c1e;stroke:#48484a" stroke-width="1.5"/>
+          <g style="stroke:#3a3a3c" stroke-width="1" stroke-dasharray="4 6">
+            <line x1="70" y1="74" x2="1010" y2="74"/><line x1="70" y1="216" x2="1010" y2="216"/>
+            <line x1="70" y1="252" x2="1010" y2="252"/><line x1="70" y1="394" x2="1010" y2="394"/>
+          </g>
+          <rect x="380" y="74" width="12" height="142" rx="3" style="fill:#f5b10c"/>
+          <rect x="660" y="252" width="12" height="142" rx="3" style="fill:#f5b10c"/>
+          <text class="bay" x="96" y="150">Bay 1</text><text x="96" y="176">17 × 96 m</text>
+          <text class="bay" x="96" y="328">Bay 2</text><text x="96" y="354">17 × 96 m</text>
+          <text x="404" y="150">20 MT EOT crane</text><text x="684" y="328">20 MT EOT crane</text>
+          <line x1="60" y1="30" x2="1020" y2="30" style="stroke:#636366" stroke-width="1"/>
+          <line x1="60" y1="24" x2="60" y2="36" style="stroke:#636366"/><line x1="1020" y1="24" x2="1020" y2="36" style="stroke:#636366"/>
+          <rect x="490" y="20" width="60" height="20" style="fill:#000"/><text x="520" y="35" text-anchor="middle">96 m</text>
+          <line x1="32" y1="60" x2="32" y2="408" style="stroke:#636366" stroke-width="1"/>
+          <line x1="26" y1="60" x2="38" y2="60" style="stroke:#636366"/><line x1="26" y1="408" x2="38" y2="408" style="stroke:#636366"/>
+          <rect x="12" y="214" width="20" height="44" style="fill:#000"/>
+          <text x="22" y="238" text-anchor="middle" transform="rotate(-90 22 234)">34 m</text>
+        </svg>
+      </div>
+      <p class="sub" style="font-size:12px;margin-top:10px">Covered shed, plan to scale. Crane positions indicative.</p>
+      <div class="duo">
+        <figure class="rise"><img src="img/shop-bays.jpg" alt="Shop interior with yellow EOT cranes over rolled shells"><figcaption>Inside the bays. 44,000 sq ft under roof.</figcaption></figure>
+        <figure class="rise"><img src="img/cnc-drill.jpg" alt="Kotec CNC multi-axis drilling line"><figcaption>Kotec CNC multi-axis drilling, holes to Ø40 mm.</figcaption></figure>
+      </div>
+      <h3 class="h3" style="margin-top:96px">From plate to primer.</h3>
+      <p class="sub" style="margin-top:8px">The H-beam and built-up section line, in order.</p>
+      <div class="steps">
+        <div><b>STEP 1</b><h3>Cut</h3><p>CNC plasma and flame profiling on a 4 × 15 m bed.</p></div>
+        <div><b>STEP 2</b><h3>Assemble</h3><p>Automated fit-up of webs and flanges, up to 2 m deep.</p></div>
+        <div><b>STEP 3</b><h3>Weld</h3><p>Submerged-arc welding at 1,000 A and 1,250 A.</p></div>
+        <div><b>STEP 4</b><h3>Straighten</h3><p>Hydraulic flange straightening, flanges to 80 mm.</p></div>
+        <div><b>STEP 5</b><h3>Drill</h3><p>CNC multi-axis drilling to drawing.</p></div>
+        <div><b>STEP 6</b><h3>Finish</h3><p>Blast, airless spray, DFT checked before dispatch.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage" id="specs">
+    <div class="wrap">
+      <h2 class="h2" style="margin-bottom:40px">Tech specs.</h2>
+      <div class="specs-group"><h3>Site</h3><div class="specs-list">
+        <div class="spec"><b>5 acres</b><span>Plot 2045/P, Jharbeda, Rajgangpur</span></div>
+        <div class="spec"><b>44,000 sq ft</b><span>Covered shed area</span></div>
+        <div class="spec"><b>2 × 17 × 96 m</b><span>Production bays</span></div>
+        <div class="spec"><b>12 × 6 × 5 m</b><span>Blasting booth</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Lifting</h3><div class="specs-list">
+        <div class="spec"><b>2 × 20 MT</b><span>EOT cranes, N K Engineers</span></div>
+        <div class="spec"><b>1 × 5 MT</b><span>EOT crane, N K Engineers</span></div>
+        <div class="spec"><b>2 × 12 MT</b><span>Escorts hydra mobile cranes</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Cutting</h3><div class="specs-list">
+        <div class="spec"><b>4 × 15 m</b><span>CNC plasma / flame profile cutter, Primo Automation</span></div>
+        <div class="spec"><b>125 A</b><span>Plasma cutter, D&amp;H Sécheron</span></div>
+        <div class="spec"><b>13</b><span>Pug cutting machines, ESAB, D&amp;H, Koike</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Forming</h3><div class="specs-list">
+        <div class="spec"><b>600 MT</b><span>Hydraulic power press, Simpletec Automatics</span></div>
+        <div class="spec"><b>25 × 2,500 mm</b><span>Plate rolling, thickness × width, Maharshi Industries</span></div>
+        <div class="spec"><b>2 × 1 m</b><span>Beam assembly, height × width, Primo Automation</span></div>
+        <div class="spec"><b>80 mm</b><span>H-beam flange straightening, Primo Automation</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Welding</h3><div class="specs-list">
+        <div class="spec"><b>1,000 A · 1,250 A</b><span>SAW: Lincoln DC-1000, D&amp;H Sécheron SAW 1250</span></div>
+        <div class="spec"><b>17</b><span>MIG sets, 400 A, Panasonic YD-400 KR2</span></div>
+        <div class="spec"><b>11 + 10</b><span>ARC sets, 400 A and 250 A, Panasonic, WARPP, Megatronic, Memco</span></div>
+        <div class="spec"><b>9 ovens</b><span>Electrode and flux baking to 400 °C, Multispan, Swastik, Thermocut, Memco</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Drilling</h3><div class="specs-list">
+        <div class="spec"><b>Ø40 mm</b><span>CNC multi-axis drilling, Kotec, Korea</span></div>
+        <div class="spec"><b>Ø36 mm</b><span>Pillar drill, Royal</span></div>
+        <div class="spec"><b>14</b><span>Core drills, Ø25–60 mm, Ralli Wolf, FEIN, Positron</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Finishing</h3><div class="specs-list">
+        <div class="spec"><b>7 kg/cm²</b><span>Kulmech shot blasting, 8–10 mm nozzle</span></div>
+        <div class="spec"><b>60% solids</b><span>Airless spray capability</span></div>
+      </div></div>
+      <div class="specs-group"><h3>Power</h3><div class="specs-list">
+        <div class="spec"><b>200 kVA</b><span>Grid connection</span></div>
+        <div class="spec"><b>125 kVA</b><span>Cummins DG backup</span></div>
+        <div class="spec"><b>40 HP</b><span>ELGI screw compressor, plus 3 × 3 HP reciprocating</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="stage night center" id="quality">
+    <div class="wrap wide">
+      <h2 class="h2">Inspected from the<br>plate inward.</h2>
+      <p class="lead sub" style="max-width:660px;margin:18px auto 0">Stage inspection from material receipt to finished goods, with calibrated instruments and certified NDT and blasting-painting inspectors on our own team.</p>
+      <div class="checks">
+        <div class="tile dark"><h3 class="h3">Surface prep</h3>
+          <ul><li>Blasting booth 12 × 6 × 5 m</li><li>Sand, copper slag, shot, grit</li><li>Airless spray up to 60% solids</li><li>Painter training by Berger Paints</li></ul></div>
+        <div class="tile dark"><h3 class="h3">Coating checks</h3>
+          <ul><li>Blotter test for air quality</li><li>Dust and soluble-salt tests</li><li>WFT and DFT gauges</li><li>Cross-hatch adhesion</li><li>Surface profile and roughness</li><li>Temperature and RH logging</li></ul></div>
+        <div class="tile dark"><h3 class="h3">Witnessed by</h3>
+          <p style="margin-top:12px;font-size:15px">Beyond each customer's own inspectors, our work has passed:</p>
+          <div class="agents"><span>MECON</span><span>CET, SAIL</span><span>Lloyd's</span><span>TÜV Rheinland</span><span>TÜV Nord</span><span>Inspectorate</span><span>Bureau Veritas</span><span>Tata Projects</span><span>IRClass</span><span>Quest</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage grey" id="approvals">
+    <div class="wrap wide">
+      <div class="center">
+        <h2 class="h2">Approved where it counts.</h2>
+        <p class="lead sub" style="max-width:620px;margin:14px auto 0">Letters and certificates come with our vendor registration pack.</p>
+      </div>
+      <div class="certs">
+        <div class="cert feature rise"><span class="by">Ministry of Railways</span><h3>RDSO</h3><p>Approved vendor for open web, composite and other steel plate girders, Parts A and B. Registered for 3,600 MT a year.</p><span class="ref">CBS/G/Reg/Uni Profiles</span></div>
+        <div class="cert rise"><span class="by">NTPC Limited</span><h3>NTPC</h3><p>Welded technological and building structures, single pieces up to about 10 T.</p><span class="ref">01/7010-602/UNI PROFILES</span></div>
+        <div class="cert rise"><span class="by">SAIL · Rourkela Steel Plant</span><h3>SAIL RSP</h3><p>Registered manufacturer for heavy fabrication.</p><span class="ref">Vendor 1000090842</span></div>
+        <div class="cert rise"><span class="by">BHEL · Trichy</span><h3>BHEL</h3><p>Ducts, buck stays, auto-weld beams, bracings and columns since 2012.</p><span class="ref">Vendor code 14548</span></div>
+        <div class="cert rise"><span class="by">ROHS Certification</span><h3>ISO 9001:2015</h3><p>Fabrication and machining of equipment, spares, technological structures and H-beams.</p><span class="ref">Certificate 23DQKX25</span></div>
+        <div class="cert full rise"><span class="by">Registrations</span><h3>MSME · GST</h3><p>Udyam-registered small manufacturer. Factory licence SG 661, Odisha.</p><span class="ref">UDYAM-OD-30-0000302<br>GSTIN 21AABCU0669B1ZW</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage center" id="clients">
+    <div class="wrap">
+      <h2 class="h2">Trusted by India's<br>heavy industry.</h2>
+      <div class="names">
+        <span>BHEL</span><span>SAIL</span><span>Thermax</span><span>L&amp;T</span><span>Tata Projects</span><span>GE Power</span><span>thyssenkrupp</span><span>MECON</span><span>Hindalco</span><span>Bhilai Engineering</span><span>Tenova</span><span>Fives Stein</span><span>Rawatsons</span><span>Zetwerk</span><span>Mogli Labs</span>
+      </div>
+      <figure class="quote">
+        <blockquote>“Their performance with respect to quality and delivery is exemplary.”</blockquote>
+        <figcaption>Bhilai Engineering Corporation, on more than 4,000 tons bought over five years</figcaption>
+      </figure>
+      <div class="quotes-sm">
+        <div><p>“Good in terms of quality and delivery schedule.”</p><span>BHEL High Pressure Boiler Plant, Trichy</span></div>
+        <div><p>“Special thanks for maintaining our delivery schedule and quality.”</p><span>Thermax, Boiler &amp; Heater Division</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stage dark center" id="contact">
+    <div class="wrap">
+      <h2 class="headline">Send us<br>your drawings.</h2>
+      <p class="lead sub" style="max-width:620px;margin:22px auto 0">GA and fabrication drawings, quality plan, tonnage and delivery point. We reply with a price and a shop schedule.</p>
+      <div class="contact-grid">
+        <div><p class="by">Works</p>
+          <address>Uni Profiles Pvt. Ltd.<br>Plot 2045/P, Khata 174<br>Village Jharbeda, near Dalmia College, SH-10<br>Rajgangpur, Dist. Sundargarh<br>Odisha 770070</address>
+          <p class="sub" style="font-size:14px;margin-top:12px">40 km from Rourkela · 70 km from Jharsuguda airport</p></div>
+        <div><p class="by">Sushant Kumar Hota · Works</p>
+          <div class="cl"><span id="ph1">+91 94375 57166</span><button class="copy" type="button" data-copy="ph1">Copy</button></div>
+          <div class="cl"><span id="ph2">+91 82490 10494</span><button class="copy" type="button" data-copy="ph2">Copy</button></div>
+          <div class="cl"><span id="em1">sushant.hota@uniprofiles.in</span><button class="copy" type="button" data-copy="em1">Copy</button></div>
+          <p class="sub" style="font-size:14px;margin-top:10px">WhatsApp on +91 94375 57166</p></div>
+        <div><p class="by">General enquiries</p>
+          <div class="cl"><span id="em2">uniprofiles@uniprofiles.in</span><button class="copy" type="button" data-copy="em2">Copy</button></div>
+          <div class="cl"><span>www.uniprofiles.net</span></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div><h4>Products</h4><ul><li><a href="#build">Stacks &amp; chimneys</a></li><li><a href="#build">Boiler structures</a></li><li><a href="#build">Fired heaters</a></li><li><a href="#build">Bridge girders</a></li></ul></div>
+      <div><h4>Works</h4><ul><li><a href="#works">Shipped projects</a></li><li><a href="#facility">Facility</a></li><li><a href="#specs">Tech specs</a></li></ul></div>
+      <div><h4>Company</h4><ul><li><a href="#quality">Quality</a></li><li><a href="#approvals">Approvals</a></li><li><a href="#clients">Clients</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="#contact">Send drawings</a></li><li>Rajgangpur, Odisha</li></ul></div>
+    </div>
+    <div class="legal"><span>Copyright © Uni Profiles Private Limited. Incorporated 20 February 2009.</span><span>GSTIN 21AABCU0669B1ZW · UDYAM-OD-30-0000302</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var rail=document.getElementById('rail'),cards=[].slice.call(rail.querySelectorAll('.card'));
+  var prev=document.getElementById('prev'),next=document.getElementById('next');
+  function step(){for(var i=0;i<cards.length;i++){if(!cards[i].hidden)return cards[i].offsetWidth+20}return 300}
+  function upd(){prev.disabled=rail.scrollLeft<=4;next.disabled=rail.scrollLeft+rail.clientWidth>=rail.scrollWidth-4}
+  prev.addEventListener('click',function(){rail.scrollBy({left:-step()*2,behavior:'smooth'})});
+  next.addEventListener('click',function(){rail.scrollBy({left:step()*2,behavior:'smooth'})});
+  rail.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  document.querySelectorAll('.seg button').forEach(function(b){
+    b.addEventListener('click',function(){
+      document.querySelectorAll('.seg button').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false')});
+      cards.forEach(function(c){c.hidden=!(b.dataset.f==='all'||c.dataset.c===b.dataset.f)});
+      rail.scrollTo({left:0});upd();
+    });
+  });
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.copy),t=el.textContent.trim();
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+      try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},sel)}catch(e){sel()}
+      setTimeout(function(){b.textContent='Copy'},1800);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
