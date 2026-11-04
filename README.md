@@ -5,14 +5,34 @@ Static website for **Uni Profiles Pvt. Ltd.**, a heavy steel fabrication works a
 ## Structure
 
 ```
-public/
-  index.html     the whole site (HTML, CSS and JS in one file)
-  404.html       shown for any unknown URL
-  _headers       security headers and caching rules
-  img/           project and facility photos, logo
-wrangler.jsonc   Cloudflare config: serve ./public
-package.json     npm scripts; wrangler is pinned as a dev dependency
+public/                      what Cloudflare serves (generated HTML is committed)
+  index.html                 home
+  about/ facility/ approvals/ projects/ clients/ contact/
+  products/                  hub + one page per product family (6)
+  assets/site.css, site.js   shared styles and behaviour
+  sitemap.xml, robots.txt    generated
+  404.html, _headers, img/
+tools/build.py               generates every page, sitemap and robots.txt
+tools/icons.svg              icon sprite included in each page
 ```
+
+### Editing content
+
+All copy, products, projects, clients and approvals live in `tools/build.py`. Edit there, then run:
+
+```
+pip install pillow          # once
+python3 tools/build.py      # rewrites the pages in public/
+```
+
+Commit both `tools/` and `public/`. Do not hand-edit generated HTML: the next build overwrites it.
+
+The canonical domain is the `SITE` constant at the top of `build.py` (used in canonical tags, sitemap and schema). After CSS/JS changes, bump `ASSET_V`.
+
+### After going live
+
+1. Google Search Console: add the domain property, submit `/sitemap.xml`.
+2. Add a Google Business Profile for the works address, with the website set to the home page.
 
 All commands go through `npm run`. Wrangler is installed locally from `package.json`, so you never need `npx` or a global install.
 
