@@ -1,3 +1,4 @@
+# HTML gets Cloudflare's default (max-age=0, must-revalidate). Matching rules merge, so no Cache-Control on /*.
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
@@ -7,5 +8,8 @@
 /img/*
   Cache-Control: public, max-age=2592000
 
-/index.html
-  Cache-Control: public, max-age=0, must-revalidate
+/assets/*
+  Cache-Control: public, max-age=604800
+
+/sitemap.xml
+  Cache-Control: public, max-age=3600
